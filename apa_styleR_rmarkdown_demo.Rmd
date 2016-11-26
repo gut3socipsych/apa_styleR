@@ -1,10 +1,12 @@
 ---
 title: "APA StyleR RMarkdown Demo"
 author: "Charles Guthrie"
-output: pdf_document
+output:
+  word_document: default
+  pdf_document: default
 ---
 
-```{r, echo = F} 
+```{r, echo = F, warning = F, include = F} 
 
 #open function file from source 
 source(file = "simple_apa_style_output_functions.R")
@@ -17,7 +19,9 @@ example_1 <- intext_ttest_1(sample_data = Orange$circumference, mu = 80)
 
 #Comparing Two Means 
 ##Single Sample T-Test 
-A single sampel t-test was conducted to compare the mean circumference of the sample orange trees to the population parameter (mu = 80). The test revealed, `r example_1@text`, that the sample mean was significantly different from the population. 
+A single sample t-test was conducted to determine if the mean scores of the sample data was significantly different from the population mean. The test revealed, `r example_1@text`, that the sample mean was significantly different from the population mean. 
 
+###Table 1
+`r example_1@table`
 
 
